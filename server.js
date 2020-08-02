@@ -30,7 +30,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://jonny:RootRoot!1>@ds335275.mlab.com:35275/heroku_bj4rs26s', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://nwcultivation:RootRoot!1>@cluster0.c850c.mongodb.net/nwc?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Routes
 
