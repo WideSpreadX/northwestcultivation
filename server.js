@@ -31,14 +31,14 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-// DB Config
-const db = require("./config/keys").MongoURI;
-
-// Connect to Mongo
-mongoose
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://nwcultivation:RootRoot!1@cluster0.c850c.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 // Routes
 

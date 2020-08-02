@@ -4,7 +4,6 @@
   "description": "Website &amp; Database for Northwest Cultivation CBD",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
@@ -12,8 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/WideSpreadX/northwestcultivation.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["cbd", "hemp", "for", "sale", "medical", "marijuana", "thc", "bud", "plants"],
+  "author": "Jonny O",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/WideSpreadX/northwestcultivation/issues"
@@ -22,6 +21,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
+    "mongodb": "^3.6.0",
     "mongoose": "^5.9.27",
     "morgan": "^1.10.0"
   },
