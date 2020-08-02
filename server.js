@@ -32,7 +32,7 @@ app.use(express.static('public'));
 
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://nwcultivation:RootRoot!1@cluster0.c850c.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const uri = "mongodb+srv://jonnyo:rootroot1@zer0ne-odl1z.mongodb.net/widespread?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
