@@ -5,7 +5,8 @@ var exphbs = require("express-handlebars");
 
 // DB Models
 /* const User = require('./userModel.js');
-const Plant = require('./plantModel.js'); */
+*/
+const CustomerRequest = require('./CustomerRequestModel.js');
 // Create an instance of the express app.
 var app = express();
 
@@ -33,9 +34,14 @@ app.get('/', (req, res) => {
 
 
 
-// About
+// About Us
 app.get('/about', (req, res) => {
     res.render('about');
+})
+
+// Contact Us
+app.get('/contact', (req, res) => {
+    res.render('contact');
 })
 
 
@@ -57,7 +63,14 @@ app.get('/all-products', (req, res) => {
     res.render('all-products');
 })
 
+// Contact Form
 
+app.post('/needs-info', (req, res) => {
+    CustomerRequest.create(req.body)
+    .then(function(dbCustomerRequest) {
+         res.json(dbCustomerRequest);
+    });
+})
 // Start Server
 app.listen(PORT, function() {
     console.log(`App running on port ${PORT}`);

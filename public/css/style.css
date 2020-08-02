@@ -2,3 +2,7 @@ body {
     background: black;
     color: white;
 }
+.form-group label {
+    width: 200px;
+    background: lime;
+}
