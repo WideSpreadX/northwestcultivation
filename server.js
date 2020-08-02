@@ -30,7 +30,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('public'));
 
-mongoose.connect('mongodb+srv://nwcultivation:RootRoot!1>@cluster0.c850c.mongodb.net/nwc?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://nwcultivation:RootRoot!1>@cluster0.c850c.mongodb.net/nwc?retryWrites=true&w=majority');
 
 // Routes
 
