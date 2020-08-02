@@ -7,6 +7,13 @@ var exphbs = require("express-handlebars");
 /* const User = require('./userModel.js');
 */
 const CustomerRequest = require('./CustomerRequestModel.js');
+const Employee = require('./EmployeeModel.js');
+const Customer = require('./CustomerModel.js');
+/* const ClockIn = require('./ClockInModel.js');
+const ClockOut = require('./ClockOutModel.js'); */
+const Plant = require('./PlantModel.js');
+const InventoryItem = require('./InventoryItemModel.js');
+const ToDo = require('./ToDoModel.js');
 // Create an instance of the express app.
 var app = express();
 
@@ -23,7 +30,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://localhost/nwc', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://jonny:RootRoot!1>@ds335275.mlab.com:35275/heroku_bj4rs26s', {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Routes
 
@@ -71,6 +78,131 @@ app.post('/needs-info', (req, res) => {
          res.json(dbCustomerRequest);
     });
 })
+
+
+// Get All Contact Messages
+app.get('/needs-info/all', function(req, res) {
+    CustomerRequest.find({})
+    .then(function(dbCustomerRequest) {
+        res.json(dbCustomerRequest);
+    })
+});
+
+/* Employees */
+
+
+// Employee Dashboard
+app.get('/employee', function(req, res) {
+    res.render('employee-dashboard');
+});
+
+
+// Add New Plant Form
+
+app.post('/plant', (req, res) => {
+    Plant.create(req.body)
+    .then(function(dbPlant) {
+         res.json(dbPlant);
+    });
+})
+
+
+// Get All Plants
+app.get('/plant/all', function(req, res) {
+    Plant.find({})
+    .then(function(dbPlant) {
+        res.json(dbPlant);
+    })
+});
+
+// Add New Inventory Form
+
+app.post('/inventory', (req, res) => {
+    InventoryItem.create(req.body)
+    .then(function(dbInventoryItem) {
+         res.json(dbInventoryItem);
+    });
+})
+
+
+// Get All Plants
+app.get('/inventory/all', function(req, res) {
+    InventoryItem.find({})
+    .then(function(dbInventoryItem) {
+        res.json(dbInventoryItem);
+    })
+});
+
+
+// Add New Employee Form
+
+app.post('/employee', (req, res) => {
+    Employee.create(req.body)
+    .then(function(dbEmployee) {
+         res.json(dbEmployee);
+    });
+})
+
+
+// Get All Employees
+app.get('/employee/all', function(req, res) {
+    Employee.find({})
+    .then(function(dbEmployee) {
+        res.json(dbEmployee);
+    })
+});
+
+// Clock In
+/* app.put('/clock-in', (req, res) => {
+    Employee.findByIdAndUpdate(req.body)
+    .then(function(dbEmployee) {
+        res.json(dbEmployee);
+    })
+}) */
+/* Customers */
+
+
+// Customer Dashboard
+app.get('/customer', function(req, res) {
+    res.render('customer-dashboard');
+});
+
+// Add New Customer Form
+
+app.post('/customer', (req, res) => {
+    Customer.create(req.body)
+    .then(function(dbCustomer) {
+         res.json(dbCustomer);
+    });
+})
+
+
+// Get All Customers
+app.get('/customer/all', function(req, res) {
+    Customer.find({})
+    .then(function(dbCustomer) {
+        res.json(dbCustomer);
+    })
+});
+
+// Add New To Do Form
+
+app.post('/to-do', (req, res) => {
+    ToDo.create(req.body)
+    .then(function(dbToDo) {
+         res.json(dbToDo);
+    });
+})
+
+
+// Get All Customers
+app.get('/to-do/all', function(req, res) {
+    ToDo.find({})
+    .then(function(dbToDo) {
+        res.json(dbToDo);
+    })
+});
+
 // Start Server
 app.listen(PORT, function() {
     console.log(`App running on port ${PORT}`);

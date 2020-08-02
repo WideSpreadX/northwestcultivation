@@ -31,6 +31,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/contact">Contact</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/customer">Dashboard</a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Products
@@ -44,9 +47,9 @@
       </li>
 
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" action="/to-do" method="POST">
+      <input class="form-control mr-sm-2" name="todo" type="text" placeholder="Add To Do" aria-label="To Do">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add</button>
     </form>
   </div>
 </nav>

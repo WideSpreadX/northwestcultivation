@@ -2,14 +2,11 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const CustomerRequestSchema = new Schema({
+const EmployeeSchema = new Schema({
     f_name: {
         type: String
     },
     l_name: {
-        type: String
-    },
-    business_name: {
         type: String
     },
     phone: {
@@ -24,19 +21,25 @@ const CustomerRequestSchema = new Schema({
     state: {
         type: String
     },
-    info_body: {
+    department: {
         type: String
     },
-    read: {
+    currently_clocked_in: {
         type: Boolean,
         default: false
     },
-    responded: {
-        type: Boolean,
-        default: false
+    clocked_in: {
+        type: Array,
+        $ref : "ClockIn"
+    },
+    clocked_out: {
+        type: Array,
+        $ref : "ClockOut"
     }
+
+
 });
 
-const CustomerRequest = mongoose.model("CustomerRequest", CustomerRequestSchema);
+const Employee = mongoose.model("Employee", EmployeeSchema);
 
-module.exports = CustomerRequest;
+module.exports = Employee;

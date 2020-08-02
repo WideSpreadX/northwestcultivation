@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const CustomerRequestSchema = new Schema({
+const CustomerSchema = new Schema({
     f_name: {
         type: String
     },
@@ -24,19 +24,15 @@ const CustomerRequestSchema = new Schema({
     state: {
         type: String
     },
-    info_body: {
-        type: String
+    favorites: {
+        type: Array
     },
-    read: {
-        type: Boolean,
-        default: false
-    },
-    responded: {
-        type: Boolean,
-        default: false
+    cart: {
+        type: Array
     }
+
 });
 
-const CustomerRequest = mongoose.model("CustomerRequest", CustomerRequestSchema);
+const Customer = mongoose.model("Customer", CustomerSchema);
 
-module.exports = CustomerRequest;
+module.exports = Customer;
