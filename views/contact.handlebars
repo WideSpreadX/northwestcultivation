@@ -1,8 +1,8 @@
 <h1 class="text-center my-4">Contact Us</h1>
 
 
-<a  class="text-center" style="display: block;" href="mailto:northwestcultivation@gmail.com">NORTHWESTCULTIVATION@GMAIL.COM</a>
-<a  class="text-center" style="display: block;" href="tel:8603640403">860.364.0403</a>
+<a  class="text-center" style="display: block; color: rgb(238,89,36);" href="mailto:northwestcultivation@gmail.com">NORTHWESTCULTIVATION@GMAIL.COM</a>
+<a  class="text-center my-4" style="display: block; color: rgb(238,89,36); font-weight: bold;" href="tel:8603640403">860.364.0403</a>
 <form action="/needs-info" method="POST" style="background: rgb(238,89,36); color: white; padding: 30px; border-radius: 8px;">
   <div class="form-group">
     <label for="f_name" style="width: 120px;">First Name</label>
@@ -33,11 +33,13 @@
     <input type="text" name="state" id="state">
         </div>
         <hr style="box-shadow: 0 0 5px white; border: solid 1px white;">
-          <div class="form-group text-center" style="width: 100%;">
-    <label for="info_body" style="width: 120px; display: block;">Questions:</label>
-    <textarea name="info_body" id="info_body" cols="50" rows="10"></textarea>
-          </div>
+<div class="input-group my-4">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Questions</span>
+  </div>
+  <textarea class="form-control" name="info_body" aria-label="With textarea"></textarea>
+</div>
     <input type="submit" value="Submit" style="display: block; width: 100%;">
 </form>
 
-<p class="text-center">Connecticut License #HMPG.000085.COND</p>
+<p class="text-center my-2">Connecticut License #HMPG.000085.COND</p>
