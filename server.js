@@ -32,6 +32,7 @@ app.use(express.static('public'));
 
 mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/nwc', {useNewUrlParser: true, useUnifiedTopology: true});
 
+
 // Routes
 
 // Landing Page
@@ -69,6 +70,24 @@ app.get('/products', (req, res) => {
 app.get('/all-products', (req, res) => {
     res.render('all-products');
 })
+
+// New Customer Form
+
+app.post('/customer/new', (req, res) => {
+     Customer.create(req.body)
+    .then(function(dbCustomer) {
+         res.json(dbCustomer);
+    });
+
+});
+
+// Get All Customers
+app.get('/customer/all', function(req, res) {
+    Customer.find({})
+    .then(function(dbCustomer) {
+        res.json(dbCustomer);
+    })
+});
 
 // Contact Form
 
@@ -153,12 +172,12 @@ app.get('/employee/all', function(req, res) {
 });
 
 // Clock In
-/* app.put('/clock-in', (req, res) => {
+app.put('/employee/clock-in', (req, res) => {
     Employee.findByIdAndUpdate(req.body)
     .then(function(dbEmployee) {
         res.json(dbEmployee);
     })
-}) */
+})
 /* Customers */
 
 

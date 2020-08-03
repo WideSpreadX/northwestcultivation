@@ -24,6 +24,9 @@ const EmployeeSchema = new Schema({
     department: {
         type: String
     },
+    employee_pin: {
+        type: String
+    },
     currently_clocked_in: {
         type: Boolean,
         default: false

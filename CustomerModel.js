@@ -18,6 +18,9 @@ const CustomerSchema = new Schema({
     email: {
         type: String
     },
+    password: {
+        type: String
+    },
     country: {
         type: String
     },

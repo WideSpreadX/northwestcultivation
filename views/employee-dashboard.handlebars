@@ -1,15 +1,17 @@
+
+
 <h1 class="text-center my-4">Employee Dashboard</h1>
 
-<p class="text-center">Time Clock Not Running Yet</p>
-<form action="/employee" method="PUT">
-<input type="time" name="time" style="width: 100%;">
-<button type="submit" name="clock_in" class="btn btn-outline-success btn-lg btn-block my-4">Clock In</button>
+{{!-- <p class="text-center">Time Clock Not Running Yet</p>
+<form action="/employee/clock-in" method="PUT">
+<input type="time" name="clock_in" style="width: 100%;">
+<button type="submit" class="btn btn-outline-success btn-lg btn-block my-4">Clock In</button>
 </form>
-<form action="/employee" method="PUT">
-<input type="time" name="time" style="width: 100%;">
-<button type="button" name="clock_out" class="btn btn-outline-danger btn-lg btn-block my-4">Clock Out</button>
+<form action="/employee/clock-out" method="POST">
+<input type="time" name="clock_out" style="width: 100%;">
+<button type="submit" class="btn btn-outline-danger btn-lg btn-block my-4">Clock Out</button>
 </form>
-
+ --}}
 <form action="/employee" method="POST" style="background: rgb(238,89,36); color: white; padding: 30px; border-radius: 8px; padding-top: 5px;">
 <h3 class="text-center my-4">Add New Employee</h3>
   <div class="form-group">
@@ -41,12 +43,16 @@
     <label for="department" style="width: 120px;">Department</label>
     <input type="text" name="department" id="department_employee">
         </div>
+        <div class="form-group">
+    <label for="employee_pin" style="width: 120px;">PIN</label>
+    <input maxlength="4" type="password" name="employee_pin" id="department_employee">
+        </div>
        
     <input type="submit" value="Submit" style="display: block; width: 100%;" class="my-4">
 </form>
 
 {{!-- Add New Plant --}}
-<form action="/plant" method="POST" style="background: rgb(238,89,36); color: white; padding: 30px; border-radius: 8px; padding-top: 5px; margin-top: 30px; margin-bottom: 30px;">
+<form action="/plant" method="POST" style="background: rgb(21, 180, 15); color: white; padding: 30px; border-radius: 8px; padding-top: 5px; margin-top: 30px; margin-bottom: 30px;">
 <h3 class="text-center my-4">Add New Species</h3>
   <div class="form-group">
     <label for="name" style="width: 120px;">Name</label>
@@ -90,7 +96,7 @@
 </form>
 
 {{!-- Add New Inventory Item --}}
-<form action="/inventory" method="POST" style="background: rgb(0,0,0); color: white; padding: 30px; border-radius: 8px; padding-top: 5px; margin-top: 30px; margin-bottom: 30px;">
+<form action="/inventory" method="POST" style="background: rgb(14, 67, 211); color: white; padding: 30px; border-radius: 8px; padding-top: 5px; margin-top: 30px; margin-bottom: 30px;">
 <h3 class="text-center my-4">Add New Inventory Item</h3>
   <div class="form-group">
     <label for="item_name" style="width: 120px;">Item Name</label>
@@ -136,3 +142,19 @@
        
     <input type="submit" value="Submit" style="display: block; width: 100%;" class="my-4">
 </form>
+
+<div class="testing-area" style="background: rgb(0, 0, 0); border-radius: 8px; padding: 10px; color: white;">
+
+<h1 class="text-center">Database Entries</h1>
+
+    <div class="testing-box" style="font-size: 22px; margin-top: 10px; border-top: solid 2px white; padding-top: 15px;">
+        <ul>
+            <li><a href="/customer/all">All Customers</a></li>
+            <li><a href="/employee/all">All Employees</a></li>
+            <li><a href="/plant/all">All Plants</a></li>
+            <li><a href="/inventory/all">All Inventory Items</a></li>
+            <li><a href="/needs-info/all">All Customer Requests</a></li>
+            <li><a href="/to-do/all">All ToDos</a></li>
+        </ul>
+    </div>
+</div>

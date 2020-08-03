@@ -1,1 +1,44 @@
 <h1 class="text-center my-4">Customer Dashboard</h1>
+
+
+<form action="/customer/new" method="POST" style="background: rgb(238,89,36); color: white; padding: 30px; border-radius: 8px;">
+  <div class="form-group">
+    <label for="f_name" style="width: 120px;">First Name</label>
+    <input type="text" name="f_name" id="f_name">
+  </div>
+    <div class="form-group">
+    <label for="l_name" style="width: 120px;">Last Name</label>
+    <input type="text" name="l_name" id="l_name">
+    </div>
+    <div class="form-group">
+    <label for="email" style="width: 120px;">Email</label>
+    <input type="email" name="email" id="email">
+    </div>
+    <div class="form-group">
+    <label for="password" style="width: 120px;">Password</label>
+    <input type="password" name="password" id="password">
+    </div>
+    <div class="form-group">
+    <label for="password2" style="width: 120px;">Re-Enter Password</label>
+    <input type="password" name="password2" id="password2">
+    </div>
+      <div class="form-group">
+    <label for="business_name" style="width: 120px;">Business Name</label>
+    <input type="text" name="business_name" id="business_name">
+      </div>
+        <div class="form-group">
+    <label for="phone" style="width: 120px;">Phone</label>
+    <input type="text" name="phone" id="phone">
+    </div>
+      <div class="form-group">
+    <label for="country" style="width: 120px;">Country</label>
+    <input type="text" name="country" id="country">
+      </div>
+        <div class="form-group">
+    <label for="state" style="width: 120px;">State</label>
+    <input type="text" name="state" id="state">
+        </div>
+        <hr style="box-shadow: 0 0 5px white; border: solid 1px white;">
+
+    <input type="submit" value="Submit" style="display: block; width: 100%;">
+</form>
