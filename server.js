@@ -191,7 +191,7 @@ app.get('/customer', function(req, res) {
 app.post('/customer', (req, res) => {
     Customer.create(req.body)
     .then(function(dbCustomer) {
-         res.json(dbCustomer).pretty();
+         res.json(dbCustomer);
     });
 })
 
@@ -200,7 +200,7 @@ app.post('/customer', (req, res) => {
 app.get('/customer/all', function(req, res) {
     Customer.find({})
     .then(function(dbCustomer) {
-        res.json(dbCustomer).pretty();
+        res.json(dbCustomer);
     })
 });
 
@@ -218,7 +218,7 @@ app.post('/to-do', (req, res) => {
 app.get('/to-do/all', function(req, res) {
     ToDo.find({})
     .then(function(dbToDo) {
-        res.json(dbToDo).pretty();
+        res.json(dbToDo);
     })
 });
 
