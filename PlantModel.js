@@ -29,6 +29,18 @@ const PlantSchema = new Schema({
     },
     effect: {
         type: Array
+    },
+    description: {
+        type: String
+    },
+    price1: {
+        type: String
+    },
+    price2: {
+        type: String
+    },
+    price3: {
+        type: String
     }
 
 });

@@ -53,7 +53,7 @@
 
 {{!-- Add New Plant --}}
 <form action="/plant" method="POST" style="background: rgb(21, 180, 15); color: white; padding: 30px; border-radius: 8px; padding-top: 5px; margin-top: 30px; margin-bottom: 30px;">
-<h3 class="text-center my-4">Add New Species</h3>
+<h3 class="text-center my-4">Add New Strain</h3>
   <div class="form-group">
     <label for="name" style="width: 120px;">Name</label>
     <input type="text" name="name" id="name">
@@ -90,6 +90,22 @@
         <div class="form-group">
     <label for="effect" style="width: 120px;">Effect</label>
     <input type="text" name="effect" id="effect">
+        </div>
+        <div class="form-group">
+    <label for="description" style="width: 120px;">Description</label>
+    <input type="text" name="description" id="description">
+        </div>
+        <div class="form-group">
+    <label for="price1" style="width: 120px;">Price Each</label>
+    <input type="text" name="price1" id="price1">
+        </div>
+        <div class="form-group">
+    <label for="price2" style="width: 120px;">Price Each for 100+</label>
+    <input type="text" name="price2" id="price2">
+        </div>
+        <div class="form-group">
+    <label for="price3" style="width: 120px;">Price Each for 1000+</label>
+    <input type="text" name="price3" id="price3">
         </div>
        
     <input type="submit" value="Submit" style="display: block; width: 100%;" class="my-4">

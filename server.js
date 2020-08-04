@@ -98,10 +98,13 @@ app.get('/customer/all', function(req, res) {
 app.post('/needs-info', (req, res) => {
     CustomerRequest.create(req.body)
     .then(function(dbCustomerRequest) {
-         res.json(dbCustomerRequest);
+         res.redirect('/request-sent');
     });
 })
 
+app.get('/request-sent', function(req, res) {
+    res.render('request-sent')
+});
 
 // Get All Contact Messages
 app.get('/needs-info/all', function(req, res) {
