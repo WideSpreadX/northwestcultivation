@@ -83,10 +83,14 @@ app.post('/customer/new', (req, res) => {
 
 // Get All Customers
 app.get('/customer/all', function(req, res) {
-    Customer.find({})
-    .then(function(dbCustomer) {
-        res.json(dbCustomer);
-    })
+   Customer.find((err, data) => {
+       if(!err){
+           res.render('employee-customer-all', {customers: data});
+        } else {
+            console.log('Could not retrieve Customers')
+        }
+   });
+   
 });
 
 // Contact Form
@@ -101,10 +105,14 @@ app.post('/needs-info', (req, res) => {
 
 // Get All Contact Messages
 app.get('/needs-info/all', function(req, res) {
-    CustomerRequest.find({})
-    .then(function(dbCustomerRequest) {
-        res.json(dbCustomerRequest);
-    })
+    CustomerRequest.find((err, data) => {
+        if(!err){
+            res.render('customer-request-all', {customerRequests: data});
+         } else {
+             console.log('Could not retrieve Customer Requests')
+         }
+    });
+ 
 });
 
 /* Employees */
@@ -128,10 +136,13 @@ app.post('/plant', (req, res) => {
 
 // Get All Plants
 app.get('/plant/all', function(req, res) {
-    Plant.find({})
-    .then(function(dbPlant) {
-        res.json(dbPlant);
-    })
+    Plant.find((err, data) => {
+        if(!err){
+            res.render('plant-all', {plant: data});
+         } else {
+             console.log('Could not retrieve Plants')
+         }
+    });
 });
 
 // Add New Inventory Form
@@ -146,10 +157,13 @@ app.post('/inventory', (req, res) => {
 
 // Get All Plants
 app.get('/inventory/all', function(req, res) {
-    InventoryItem.find({})
-    .then(function(dbInventoryItem) {
-        res.json(dbInventoryItem);
-    })
+    InventoryItem.find((err, data) => {
+        if(!err){
+            res.render('inventory-all', {inventoryItem: data});
+         } else {
+             console.log('Could not retrieve Inventory List')
+         }
+    });
 });
 
 
@@ -165,10 +179,13 @@ app.post('/employee', (req, res) => {
 
 // Get All Employees
 app.get('/employee/all', function(req, res) {
-    Employee.find({})
-    .then(function(dbEmployee) {
-        res.json(dbEmployee);
-    })
+    Employee.find((err, data) => {
+        if(!err){
+            res.render('employee-all', {employee: data});
+         } else {
+             console.log('Could not retrieve Employees')
+         }
+    });
 });
 
 // Clock In
@@ -196,13 +213,6 @@ app.post('/customer', (req, res) => {
 })
 
 
-// Get All Customers
-app.get('/customer/all', function(req, res) {
-    Customer.find({})
-    .then(function(dbCustomer) {
-        res.json(dbCustomer);
-    })
-});
 
 // Add New To Do Form
 
@@ -216,10 +226,13 @@ app.post('/to-do', (req, res) => {
 
 // Get All To Do's
 app.get('/to-do/all', function(req, res) {
-    ToDo.find({})
-    .then(function(dbToDo) {
-        res.json(dbToDo);
-    })
+    ToDo.find((err, data) => {
+        if(!err){
+            res.render('todo-all', {todo: data});
+         } else {
+             console.log('Could not retrieve To Do List')
+         }
+    });
 });
 
 
