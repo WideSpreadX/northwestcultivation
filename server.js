@@ -76,7 +76,7 @@ app.get('/all-products', (req, res) => {
 app.post('/customer/new', (req, res) => {
      Customer.create(req.body)
     .then(function(dbCustomer) {
-         res.json(dbCustomer);
+        res.redirect('/request-sent');
     });
 
 });
@@ -132,7 +132,7 @@ app.get('/employee', function(req, res) {
 app.post('/plant', (req, res) => {
     Plant.create(req.body)
     .then(function(dbPlant) {
-         res.json(dbPlant);
+        res.redirect('/request-sent');
     });
 })
 
@@ -153,7 +153,7 @@ app.get('/plant/all', function(req, res) {
 app.post('/inventory', (req, res) => {
     InventoryItem.create(req.body)
     .then(function(dbInventoryItem) {
-         res.json(dbInventoryItem);
+        res.redirect('/request-sent');
     });
 })
 
@@ -175,7 +175,7 @@ app.get('/inventory/all', function(req, res) {
 app.post('/employee', (req, res) => {
     Employee.create(req.body)
     .then(function(dbEmployee) {
-         res.json(dbEmployee);
+        res.redirect('/request-sent');
     });
 })
 
@@ -195,7 +195,7 @@ app.get('/employee/all', function(req, res) {
 app.put('/employee/clock-in', (req, res) => {
     Employee.findByIdAndUpdate(req.body)
     .then(function(dbEmployee) {
-        res.json(dbEmployee);
+        res.redirect('/request-sent');
     })
 })
 /* Customers */
@@ -211,7 +211,7 @@ app.get('/customer', function(req, res) {
 app.post('/customer', (req, res) => {
     Customer.create(req.body)
     .then(function(dbCustomer) {
-         res.json(dbCustomer);
+        res.redirect('/request-sent');
     });
 })
 
@@ -222,7 +222,7 @@ app.post('/customer', (req, res) => {
 app.post('/to-do', (req, res) => {
     ToDo.create(req.body)
     .then(function(dbToDo) {
-         res.json(dbToDo);
+        res.redirect('/request-sent');
     });
 })
 
