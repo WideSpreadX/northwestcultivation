@@ -127,6 +127,12 @@ app.get('/employee', function(req, res) {
 });
 
 
+// ZunBudz
+app.get('/zunbudz', function(req, res) {
+    res.render('zunbudz');
+});
+
+
 // Add New Plant Form
 
 app.post('/plant', (req, res) => {
