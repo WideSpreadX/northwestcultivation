@@ -12,6 +12,7 @@ const Customer = require('./CustomerModel.js');
 /* const ClockIn = require('./ClockInModel.js');
 const ClockOut = require('./ClockOutModel.js'); */
 const Plant = require('./PlantModel.js');
+const Flower = require('./FlowerModel.js');
 const InventoryItem = require('./InventoryItemModel.js');
 const ToDo = require('./ToDoModel.js');
 // Create an instance of the express app.
@@ -153,6 +154,28 @@ app.get('/plant/all', function(req, res) {
     Plant.find((err, data) => {
         if(!err){
             res.render('plant-all', {plant: data});
+            console.log(data);
+         } else {
+             console.log('Could not retrieve Plants')
+         }
+    });
+});
+
+// Add New Flower Form
+
+app.post('/flower', (req, res) => {
+    Flower.create(req.body)
+    .then(function(dbFlower) {
+        res.redirect('/request-sent');
+    });
+})
+
+
+// Get All Plants
+app.get('/flower/all', function(req, res) {
+    Flower.find((err, data) => {
+        if(!err){
+            res.render('flower-all', {flower: data});
             console.log(data);
          } else {
              console.log('Could not retrieve Plants')

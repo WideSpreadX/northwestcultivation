@@ -12,6 +12,21 @@
 <button type="submit" class="btn btn-outline-danger btn-lg btn-block my-4">Clock Out</button>
 </form>
  --}}
+ <div class="testing-area" style="background: rgb(189, 175, 50); border-radius: 8px; padding: 10px; color: white; margin-bottom: 30px;">
+<h1 class="text-center">Database Entries</h1>
+
+    <div class="testing-box" style="font-size: 22px; margin-top: 10px; border-top: solid 2px white; padding-top: 15px;">
+        <ul>
+            <li><a href="/customer/all">All Customers</a></li>
+            <li><a href="/employee/all">All Employees</a></li>
+            <li><a href="/plant/all">All Plants</a></li>
+            <li><a href="/flower/all">All Flowers</a></li>
+            <li><a href="/inventory/all">All Inventory Items</a></li>
+            <li><a href="/needs-info/all">All Customer Requests</a></li>
+            <li><a href="/to-do/all">All ToDos</a></li>
+        </ul>
+    </div>
+</div>
 <form action="/employee" method="POST" style="background: rgb(238,89,36); color: white; padding: 30px; border-radius: 8px; padding-top: 5px;">
 <h3 class="text-center my-4">Add New Employee</h3>
   <div class="form-group">
@@ -111,6 +126,66 @@
     <input type="submit" value="Submit" style="display: block; width: 100%;" class="my-4">
 </form>
 
+
+{{!-- Add New Flower --}}
+<form action="/flower" method="POST" style="background: rgb(180, 15, 158); color: white; padding: 30px; border-radius: 8px; padding-top: 5px; margin-top: 30px; margin-bottom: 30px;">
+<h3 class="text-center my-4">Add New Flower</h3>
+  <div class="form-group">
+    <label for="name" style="width: 120px;">Name</label>
+    <input type="text" name="name" id="name">
+  </div>
+    <div class="form-group">
+    <label for="s_name" style="width: 120px;">Scientific Name</label>
+    <input type="text" name="s_name" id="s_name">
+    </div>
+
+        <div class="form-group">
+    <label for="thc" style="width: 120px;">THC</label>
+    <input type="text" name="thc" id="thc">
+    </div>
+      <div class="form-group">
+    <label for="thcv" style="width: 120px;">THCV</label>
+    <input type="text" name="thcv" id="thcv">
+    </div>
+      <div class="form-group">
+    <label for="cbd" style="width: 120px;">CBD</label>
+    <input type="text" name="cbd" id="cbd">
+      </div>
+        <div class="form-group">
+    <label for="cbg" style="width: 120px;">CBG</label>
+    <input type="text" name="cbg" id="cbg">
+        </div>
+        <div class="form-group">
+    <label for="cbn" style="width: 120px;">CBN</label>
+    <input type="text" name="cbn" id="cbn">
+        </div>
+        <div class="form-group">
+    <label for="genetics" style="width: 120px;">Genetics</label>
+    <input type="text" name="genetics" id="genetics">
+        </div>
+        <div class="form-group">
+    <label for="effect" style="width: 120px;">Effect</label>
+    <input type="text" name="effect" id="effect">
+        </div>
+        <div class="form-group">
+    <label for="description" style="width: 120px;">Description</label>
+    <input type="text" name="description" id="description">
+        </div>
+        <div class="form-group">
+    <label for="price1" style="width: 120px;">Price Each</label>
+    <input type="text" name="price1" id="price1">
+        </div>
+        <div class="form-group">
+    <label for="price2" style="width: 120px;">Price Each for 100+</label>
+    <input type="text" name="price2" id="price2">
+        </div>
+        <div class="form-group">
+    <label for="price3" style="width: 120px;">Price Each for 1000+</label>
+    <input type="text" name="price3" id="price3">
+        </div>
+       
+    <input type="submit" value="Submit" style="display: block; width: 100%;" class="my-4">
+</form>
 {{!-- Add New Inventory Item --}}
 <form action="/inventory" method="POST" style="background: rgb(14, 67, 211); color: white; padding: 30px; border-radius: 8px; padding-top: 5px; margin-top: 30px; margin-bottom: 30px;">
 <h3 class="text-center my-4">Add New Inventory Item</h3>
@@ -168,6 +243,7 @@
             <li><a href="/customer/all">All Customers</a></li>
             <li><a href="/employee/all">All Employees</a></li>
             <li><a href="/plant/all">All Plants</a></li>
+            <li><a href="/flower/all">All Flowers</a></li>
             <li><a href="/inventory/all">All Inventory Items</a></li>
             <li><a href="/needs-info/all">All Customer Requests</a></li>
             <li><a href="/to-do/all">All ToDos</a></li>
