@@ -58,6 +58,11 @@ app.get('/plants', (req, res) => {
     res.render('plants');
 })
 
+// Flowers
+app.get('/flowers', (req, res) => {
+    res.render('flowers');
+})
+
 
 // Products
 app.get('/products', (req, res) => {
@@ -148,6 +153,7 @@ app.get('/plant/all', function(req, res) {
     Plant.find((err, data) => {
         if(!err){
             res.render('plant-all', {plant: data});
+            console.log(data);
          } else {
              console.log('Could not retrieve Plants')
          }
