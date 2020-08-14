@@ -1,8 +1,14 @@
 const express = require('express');
+const router = express.Router();
 const logger = require('morgan');
 const mongoose = require('mongoose');
-var exphbs = require("express-handlebars");
+const Handlebars = require('handlebars')
+const exphbs = require("express-handlebars");
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
+const insecureHandlebars = allowInsecurePrototypeAccess(Handlebars);
+const bodyParser = require('body-parser');
 
+const todoRoute = require('./routes/todo');
 // DB Models
 /* const User = require('./userModel.js');
 */
@@ -16,20 +22,26 @@ const Flower = require('./FlowerModel.js');
 const InventoryItem = require('./InventoryItemModel.js');
 const ToDo = require('./ToDoModel.js');
 // Create an instance of the express app.
-var app = express();
+const app = express();
 
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
-// Set Handlebars as the default templating engine.
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
 
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 app.use(logger('dev'));
-app.use(express.urlencoded({extended: true}));
+/* app.use(express.urlencoded({extended: true})); */
 app.use(express.json());
 app.use(express.static('public'));
+
+// Set Handlebars as the default templating engine.
+app.engine("handlebars", exphbs({ defaultLayout: "main" },{
+    handlebars: allowInsecurePrototypeAccess(Handlebars)}));
+app.set("view engine", "handlebars");
+
 
 mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/nwc', {useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -253,26 +265,7 @@ app.post('/customer', (req, res) => {
 
 
 // Add New To Do Form
-
-app.post('/to-do', (req, res) => {
-    ToDo.create(req.body)
-    .then(function(dbToDo) {
-        res.redirect('/request-sent');
-    });
-})
-
-
-// Get All To Do's
-app.get('/to-do/all', function(req, res) {
-    ToDo.find((err, data) => {
-        if(!err){
-            res.render('todo-all', {todo: data});
-         } else {
-             console.log('Could not retrieve To Do List')
-         }
-    });
-});
-
+app.use('/to-do', todoRoute);
 
 // Start Server
 app.listen(PORT, function() {

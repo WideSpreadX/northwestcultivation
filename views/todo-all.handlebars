@@ -1,10 +1,16 @@
 <h1 class="text-center">All To Do's</h1>
+<div class="todo-list">
 <ul>
-  {{#each todo}}
-  	<li>
-          <h2>Need:</h2>
-       <p>{{this}}</p>
-       <hr>
-  	</li>
-  {{/each}}
+{{#each usersDocuments}}
+<li>
+<div class="todo-item">
+<h3>Need:</h3>
+  <h5>{{this.todo}}</h5>
+
+<hr>
+  <h3>Done: {{this.todo_completed}}</h3>
+</div>
+  </li>
+{{/each}}    
 </ul>
+</div>

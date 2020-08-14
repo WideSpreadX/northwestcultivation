@@ -12,7 +12,17 @@
     "type": "git",
     "url": "git+https://github.com/WideSpreadX/northwestcultivation.git"
   },
-  "keywords": ["cbd", "hemp", "for", "sale", "medical", "marijuana", "thc", "bud", "plants"],
+  "keywords": [
+    "cbd",
+    "hemp",
+    "for",
+    "sale",
+    "medical",
+    "marijuana",
+    "thc",
+    "bud",
+    "plants"
+  ],
   "author": "Jonny O",
   "license": "ISC",
   "bugs": {
@@ -20,6 +30,9 @@
   },
   "homepage": "https://github.com/WideSpreadX/northwestcultivation#readme",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "mongodb": "^3.6.0",
@@ -27,6 +40,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "handlebars": "^4.5.0",
     "nodemon": "^2.0.4"
   },
   "engines": {

@@ -339,6 +339,30 @@ font-family: 'Stint Ultra Expanded', cursive;
             text-align: center;
             color: white;
         }
+        .todo-list {
+            margin: 0;
+            padding: 0;
+        }
+        .todo-list li {
+            list-style: none;
+            padding: 10px;
+            padding-left: 0;
+            margin: 0;
+        }
+        .todo-item {
+            border: solid 1px black;
+            padding: 5px;
+            border-radius: 8px;
+        }
+        .todo-item:hover {
+            background: orangered;
+        }
+        .todo-item hr {
+            border: solid 1px white;
+            width: 90%;
+            margin-left: 5%;
+        }
+
     </style>
 </head>
 <body>
@@ -397,5 +421,7 @@ font-family: 'Stint Ultra Expanded', cursive;
 
             <a class="text-center my-4 employee-btn" style="display: block; font-size: 30px; font-weight: bold; background: #aaa; border-radius: 8px; padding: 10px;" href="/employee">Employee Dashboard</a>
     </div>
+<script   src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+
 </body>
 </html>
